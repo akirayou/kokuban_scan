@@ -1,0 +1,4 @@
+!run.batを実行すると画像の切り出しスクリプトが実行される（要Anaconda /python)
+
+unity_buildの中のexeが本体。
+Alt Enterで全画面変更
