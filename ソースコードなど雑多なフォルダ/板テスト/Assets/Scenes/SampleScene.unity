@@ -1057,13 +1057,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   in_dir: c:\kokuban_scan\in
-  span: 10
+  span: 6
   lastTime: 0
   prefabs:
   - {fileID: 5898489806270961322, guid: 1129b7db27394b946910240256fb8f2b, type: 3}
-  - {fileID: 7970162149101185663, guid: 81343c44863a74a43b85d39a3b6957a7, type: 3}
-  - {fileID: 6766022646734735357, guid: b6371edc53da4a64b8a8dee4d4c96895, type: 3}
-  - {fileID: 8724462551392057790, guid: cc69f574f33bd83419dbf808e9b60e7f, type: 3}
+  - {fileID: 8757421719971517202, guid: dd20beef6854a5f4cb2769caa40190fb, type: 3}
+  - {fileID: 3604771083589905988, guid: 8adb360a9eb43574ba0602ad65eeb2a5, type: 3}
+  - {fileID: 7687078156149674633, guid: 139e2ac78c44b174ebb87dddff575ece, type: 3}
   - {fileID: 7204310346622562739, guid: b941a9435fed8be4bba0429b656ca6bb, type: 3}
   backGround: {fileID: 997560364}
 --- !u!4 &1890932864

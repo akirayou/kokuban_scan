@@ -59,8 +59,15 @@ public class Loader : MonoBehaviour
             if (0 <= id || prefabs.Length < id)
             {
                 var a = Instantiate(prefabs[id]);
-                var plane = a.transform.Find("Plane").gameObject;
-                a.transform.Translate(Vector3.forward * 0.1f * (count % 20));
+                int pos = 0;
+                if ((count & 0x01) != 0) pos += 16;
+                if ((count & 0x02) != 0) pos += 8;
+                if ((count & 0x04) != 0) pos += 4;
+                if ((count & 0x08) != 0) pos += 2;
+                if ((count & 0x10) != 0) pos += 1;
+
+                a.transform.Translate(Vector3.forward * (0.1f * pos)  );
+                Debug.Log(a.transform);
                 var move = a.GetComponentInChildren<MoveBase>();
                 move.Seed = count;
 
