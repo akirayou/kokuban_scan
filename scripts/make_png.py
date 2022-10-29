@@ -21,9 +21,12 @@ for path in glob.glob(dir+"/*.jpg"):
     raw = cv2.imread(path)
     
     gray = cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY)
+    #kernel=np.ones((3,3),np.uint8)
+    #gray = cv2.morphologyEx(gray, cv2.MORPH_OPEN, kernel)
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dict_aruco, parameters=parameters)
     if ids is None or len(ids)!=5:
         print("マーカーがうまく読み取れなかった")
+        print(ids)
         on_error(path)
         continue
     
@@ -42,7 +45,7 @@ for path in glob.glob(dir+"/*.jpg"):
     M= cv2.getPerspectiveTransform(src_pos,dist_pos)
     src = cv2.warpPerspective(raw, M,(W,H))    
     mask = cv2.imread("mask/mask_%d.png"%(marker_id),0)
-
+    mask =  cv2.resize(mask,dsize=(W,H))
     
     # Point 2: 元画像をBGR形式からBGRA形式に変換
     dst = cv2.cvtColor(src, cv2.COLOR_BGR2BGRA)
